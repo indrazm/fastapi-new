@@ -174,6 +174,7 @@ dependencies = [
     { name = "psycopg2-binary" },
     { name = "pydantic-settings" },
     { name = "ruff" },
+    { name = "scalar-fastapi" },
     { name = "sqlmodel" },
     { name = "uvicorn" },
 ]
@@ -186,6 +187,7 @@ requires-dist = [
     { name = "psycopg2-binary", specifier = ">=2.9.10" },
     { name = "pydantic-settings", specifier = ">=2.10.1" },
     { name = "ruff", specifier = ">=0.12.7" },
+    { name = "scalar-fastapi", specifier = ">=1.2.3" },
     { name = "sqlmodel", specifier = ">=0.0.24" },
     { name = "uvicorn", specifier = ">=0.35.0" },
 ]
@@ -736,6 +738,15 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/77/ab/aca2e756ad7b09b3d662a41773f3edcbd262872a4fc81f920dc1ffa44541/ruff-0.12.7-py3-none-win32.whl", hash = "sha256:c928f1b2ec59fb77dfdf70e0419408898b63998789cc98197e15f560b9e77f77", size = 11756687 },
     { url = "https://files.pythonhosted.org/packages/b4/71/26d45a5042bc71db22ddd8252ca9d01e9ca454f230e2996bb04f16d72799/ruff-0.12.7-py3-none-win_amd64.whl", hash = "sha256:9c18f3d707ee9edf89da76131956aba1270c6348bfee8f6c647de841eac7194f", size = 12912365 },
     { url = "https://files.pythonhosted.org/packages/4c/9b/0b8aa09817b63e78d94b4977f18b1fcaead3165a5ee49251c5d5c245bb2d/ruff-0.12.7-py3-none-win_arm64.whl", hash = "sha256:dfce05101dbd11833a0776716d5d1578641b7fddb537fe7fa956ab85d1769b69", size = 11982083 },
+]
+
+[[package]]
+name = "scalar-fastapi"
+version = "1.2.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/74/f2/28e52535f13bef8781e45cb92a28fe52f28c300a132fc9d8f3db52e2f26e/scalar_fastapi-1.2.3.tar.gz", hash = "sha256:cf9ba36947ea1b0402fc1fa311f30a690b39e3baedef1f7b4553cf57002daceb", size = 10356 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0f/d7/7b32f0dd732a8c19b97005179bf5e9a0dbddb76341fea3c967c77b95e722/scalar_fastapi-1.2.3-py3-none-any.whl", hash = "sha256:15e0809d05d5b476faf299c3f20e003c6a594ea00d8be50db2efd23b5a9be30d", size = 12450 },
 ]
 
 [[package]]

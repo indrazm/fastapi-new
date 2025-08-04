@@ -1,6 +1,6 @@
 from sqlmodel import Field, Relationship, SQLModel
 
-from app.utils import generate_id
+from app.utils.generate_id import generate_id
 
 
 class User(SQLModel, table=True):
