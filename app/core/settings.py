@@ -11,8 +11,8 @@ class Settings(BaseSettings):
     DB_NAME: str = "postgres"
     DB_USER: str = "postgres"
     DB_PASSWORD: str = "postgres"
-    DB_HOST: str = "localhost"
-    DB_PORT: int = 5431
+    DB_HOST: str = "db"
+    DB_PORT: int = 5432
 
     DB_CONNECTION_STR: str = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
