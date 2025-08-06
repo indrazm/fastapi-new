@@ -1,9 +1,10 @@
 from ssl import SSLSession
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, Request, status
 from sqlalchemy.exc import IntegrityError
 from sqlmodel import Session, select
 
+from app.core.settings import settings
 from app.models.database import User
 from app.models.engine import db_session
 from app.schema.auth import LoginResponse, UserLogin
@@ -46,3 +47,14 @@ def login(user: UserLogin, db: Session = Depends(db_session)):
 
     access_token = auth_service.create_access_token(data={"sub": db_user.email})
     return LoginResponse(access_token=access_token, token_type="bearer")
+
+
+@auth_router.get("/login_google", name="login_google")
+async def login_google(request: Request):
+    return await auth_service.oauth.google.authorize_redirect(request, settings.GOOGLE_REDIRECT_URI)
+
+
+@auth_router.get("/callback")
+async def callback_google(request: Request):
+    token = await auth_service.oauth.google.authorize_access_token(request)
+    return token
