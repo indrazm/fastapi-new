@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from app.schema.post import PostRead
+from app.schema.posts import PostRead
 
 
 class UserCreate(BaseModel):

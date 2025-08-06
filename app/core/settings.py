@@ -14,7 +14,9 @@ class Settings(BaseSettings):
     DB_HOST: str = "db"
     DB_PORT: int = 5432
 
-    DB_CONNECTION_STR: str = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+    @property
+    def DB_CONNECTION_STR(self) -> str:
+        return f"postgresql://{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
 
     class Config:
         env_file = ".env"

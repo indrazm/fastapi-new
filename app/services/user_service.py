@@ -2,7 +2,7 @@ from sqlalchemy.orm import selectinload
 from sqlmodel import Session, select
 
 from app.models.database import User
-from app.schema.user import UserCreate
+from app.schema.users import UserCreate
 
 
 def create_user(db_session: Session, user: UserCreate):

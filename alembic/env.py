@@ -16,6 +16,8 @@ config = context.config
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
+print(f"settings.model_dump(): {settings.model_dump()}")
+
 config.set_main_option("sqlalchemy.url", settings.DB_CONNECTION_STR)
 
 # add your model's MetaData object here
