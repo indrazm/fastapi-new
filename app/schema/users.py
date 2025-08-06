@@ -13,4 +13,10 @@ class UserRead(BaseModel):
     id: str
     full_name: str
     email: str
+
+
+class UserReadWithPost(BaseModel):
+    id: str
+    full_name: str
+    email: str
     posts: list["PostRead"] = []

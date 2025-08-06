@@ -3,9 +3,10 @@ from sqlmodel import Session
 
 from app.models.engine import db_session
 from app.schema.posts import PostCreate, PostRead
+from app.services.auth_service import get_current_user
 from app.services.post_service import create_post, get_post, get_posts
 
-posts_router = APIRouter(prefix="/posts", tags=["posts"])
+posts_router = APIRouter(prefix="/posts", tags=["posts"], dependencies=[Depends(get_current_user)])
 
 
 @posts_router.get("/", response_model=list[PostRead])

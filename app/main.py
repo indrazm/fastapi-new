@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from scalar_fastapi import get_scalar_api_reference
 
 from app.core.settings import settings
+from app.routes.auth_routes import auth_router
 from app.routes.post_routes import posts_router
 from app.routes.user_routes import users_router
 
@@ -14,6 +15,7 @@ app = FastAPI(
 
 app.include_router(users_router)
 app.include_router(posts_router)
+app.include_router(auth_router)
 
 
 @app.get("/")
